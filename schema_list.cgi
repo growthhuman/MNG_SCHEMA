@@ -69,7 +69,7 @@ open (my $account_y_ut_file,   '<','./account_y_ut.txt'   );
 while (my $line = <$account_y_ut_file>){ push(@account_y_ut,$line); }
 open (my $isa_y_ut_file,   '<','./isa_y_ut.txt'   );
 while (my $line = <$isa_y_ut_file>){ push(@isa_y_ut,$line); }
-#################### H T M L 出 力 開 始 #######################
+################### H T M L 出 力 開 始 #######################
 print '<center>';
 print '<hr>';
 print 'LT/STスキーマ';
