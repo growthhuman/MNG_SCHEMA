@@ -5,6 +5,7 @@ use warnings;
 use CGI;
 use Carp;
 use Data::Dumper;
+use List::Util qw(max);
 
 my @user;
 my @direct;
@@ -82,7 +83,7 @@ print qq{<td align="center" width="150" bgcolor="#FF9900">Direct</td align="cent
 print qq{<td align="center" width="150" bgcolor="#FF3333"   >Account</td align="center" width="150">};
 print qq{<td align="center" width="150" bgcolor="#339933" >ISA</td align="center" width="150">};
 print '</tr>';
-for (my $i=0;$i <= $#search;$i++){
+for (my $i=0;$i <= max ($#search,$#direct,$#account,$#isa);$i++){
     print '<tr>';
     print qq{<td align="center" width="150" bgcolor="#ccffff">$search[$i]</td align="center" width="150">};
     print qq{<td align="center" width="150" bgcolor="#ffcc99">$direct[$i]</td align="center" width="150">};
@@ -96,7 +97,7 @@ print '<hr>';
 print 'UTスキーマ';
 print '<hr>';
 print '<table>';
-for (my $i=0;$i <= $#search_ut;$i++){
+for (my $i=0;$i <= max ($#search_ut,$#direct_ut,$#account_ut,$#isa_ut);$i++){
     print '<tr>';
     print qq{<td align="center" width="150" bgcolor="#ccffff">$search_ut[$i]</td align="center" width="150">};
     print qq{<td align="center" width="150" bgcolor="#ffcc99">$direct_ut[$i]</td align="center" width="150">};
@@ -110,7 +111,7 @@ print '<hr>';
 print 'LT/STスキーマ';
 print '<hr>';
 print '<table>';
-for (my $i=0;$i <= $#search_y;$i++){
+for (my $i=0;$i <= max ($#search_y,$#direct_y,$#account_y,$#isa_y);$i++){
     print '<tr>';
     print qq{<td align="center" width="150" bgcolor="#ccffff">$search_y[$i]</td align="center" width="150">};
     print qq{<td align="center" width="150" bgcolor="#ffcc99">$direct_y[$i]</td align="center" width="150">};
@@ -124,7 +125,7 @@ print '<hr>';
 print 'UTスキーマ';
 print '<hr>';
 print '<table>';
-for (my $i=0;$i <= $#search_y_ut;$i++){
+for (my $i=0;$i <= max ($#search_y_ut,$#direct_y_ut,$#account_y_ut,$#isa_y_ut);$i++){
     print '<tr>';
     print qq{<td align="center" width="150" bgcolor="#ccffff">$search_y_ut[$i]</td align="center" width="150">};
     print qq{<td align="center" width="150" bgcolor="#ffcc99">$direct_y_ut[$i]</td align="center" width="150">};
